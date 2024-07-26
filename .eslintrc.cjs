@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  ignorePatterns: ["dist", ".eslintrc.cjs", "apps/shared/api/src/**/*.js"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.js"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "detect" } },
   extends: [
