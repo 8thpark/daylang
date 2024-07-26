@@ -1,11 +1,31 @@
 import React from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Dashboard from "./pages/dashboard"
+import Learn from "./pages/learn"
+import Settings from "./pages/settings"
+import Error from "./pages/error"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/learn",
+    element: <Learn />,
+  },
+  {
+    path: "/settings",
+    element: <Settings />,
+  },
+])
 
 function App() {
   return (
-    <div className="mx-auto max-w-2xl px-4 pb-8 pt-24">
-      <h1 className="mb-2 text-2xl font-bold">DayLang</h1>
-      <p>Daily vocabulary builder for language learners.</p>
-    </div>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   )
 }
 
