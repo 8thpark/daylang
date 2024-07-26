@@ -7,14 +7,14 @@ First off, thanks for taking the time to contribute! 💜
 ### Frontend
 
 ```bash
-# Install deps.
+# Install deps
 yarn install
 
-# Format.
+# Format
 yarn format:check
 yarn format
 
-# Lint.
+# Lint
 yarn lint
 yarn lint:fix
 
