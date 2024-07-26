@@ -5,5 +5,9 @@
 <h1 align="center">DayLang</h1>
 
 <p align="center">
-  If <a href="https://duolingo.com">Duolingo</a> built a daily vocabulary builder.
+  Daily vocabulary builder for language learners.
 </p>
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
