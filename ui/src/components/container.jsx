@@ -4,7 +4,7 @@ import Navbar from "./navbar"
 
 function Container({ children }) {
   return (
-    <div className="mx-auto max-w-2xl px-4 pb-8 pt-24">
+    <div className="mx-auto max-w-2xl px-4 pb-8 pt-24 font-nunito">
       <Navbar />
 
       {children}
