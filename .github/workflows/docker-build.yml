@@ -20,13 +20,13 @@ jobs:
           context: .
           push: false
           load: true
-          tags: daylang-app:${{ github.sha }}
+          tags: daylang:${{ github.sha }}
 
       - name: Save Docker image
-        run: docker save daylang-app:${{ github.sha }} > daylang-app.tar
+        run: docker save daylang:${{ github.sha }} > daylang.tar
 
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v3
         with:
-          name: daylang-app
-          path: daylang-app.tar
+          name: daylang
+          path: daylang.tar

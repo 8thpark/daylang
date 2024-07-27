@@ -10,6 +10,7 @@ RUN yarn vite:build
 FROM golang:1.22
 WORKDIR /app
 COPY main.go go.mod go.sum ./
+COPY VERSION ./
 # COPY server ./server
 COPY --from=build /app/dist ./dist
 RUN go build -o daylang-server .
