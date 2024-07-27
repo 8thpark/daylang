@@ -2,6 +2,14 @@
   "name": "daylang",
   "private": true,
   "type": "module",
+  "watch": {
+    "vite:build": {
+      "patterns": [
+        "ui"
+      ],
+      "extensions": "css,html,jsx,png"
+    }
+  },
   "scripts": {
     "check-deps": "depcheck",
     "format": "prettier --write './**/*.{js,jsx,css,html,json}'",
@@ -9,8 +17,9 @@
     "lint": "eslint './**/*.{js,jsx}'",
     "lint:fix": "eslint './**/*.{js,jsx}' --fix",
     "dev": "vite ./ui",
-    "vite:build": "vite build ./ui --outDir ../dist",
-    "vite:preview": "vite preview ./ui"
+    "vite:build": "vite build ./ui --outDir ../dist --emptyOutDir",
+    "vite:preview": "vite preview ./ui",
+    "watch": "npm-watch"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -36,6 +45,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
+    "npm-watch": "^0.13.0",
     "postcss": "^8.4.33",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
