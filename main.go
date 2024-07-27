@@ -1,0 +1,52 @@
+package main
+
+import (
+	"log"
+	"net/http"
+	"os"
+	"path/filepath"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
+	"github.com/pkg/errors"
+)
+
+func main() {
+	router := echo.New()
+
+	router.HideBanner = true
+	router.Use(defaultMiddleware()...)
+
+	router.GET("/logout", func(ctx echo.Context) error {
+		log.Println("user logged out")
+		return ctx.Redirect(http.StatusSeeOther, "/?logout=true")
+	})
+
+	router.GET("/*", func(ctx echo.Context) error {
+		path := ctx.Request().URL.Path
+		if path == "/" {
+			return ctx.File("dist/index.html")
+		}
+
+		filePath := filepath.Join("dist", path)
+
+		_, err := os.Stat(filePath)
+		if os.IsNotExist(err) { // File doesn't exist, serve index.html.
+			return ctx.File("dist/index.html")
+		} else if err != nil { // Some other error occurred.
+			return errors.Wrap(err, "checking if static file exists")
+		}
+
+		return ctx.File(filePath) // File exists, serve it.
+	})
+
+	router.Logger.Fatal(router.Start(":5173"))
+}
+
+func defaultMiddleware() []echo.MiddlewareFunc {
+	return []echo.MiddlewareFunc{
+		middleware.Gzip(),
+		middleware.Logger(),
+		middleware.Recover(),
+	}
+}
