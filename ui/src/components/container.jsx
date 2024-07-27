@@ -12,7 +12,7 @@ function Container({ children }) {
       {children}
 
       <p>
-        <Link to="/logout">Logout</Link>
+        <a href="/logout">Logout</a>
       </p>
       <p>
         <a href="https://daylang.com/account">Account</a>

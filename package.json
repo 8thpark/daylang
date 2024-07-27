@@ -9,7 +9,7 @@
     "lint": "eslint './**/*.{js,jsx}'",
     "lint:fix": "eslint './**/*.{js,jsx}' --fix",
     "dev": "vite ./ui",
-    "vite:build": "vite build ./ui",
+    "vite:build": "vite build ./ui --outDir ../dist",
     "vite:preview": "vite preview ./ui"
   },
   "dependencies": {
