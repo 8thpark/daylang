@@ -3,10 +3,13 @@ export default {
   content: ["./ui/index.html", "./ui/**/*.{js,jsx}"],
   theme: {
     fontFamily: {
-      inter: "Inter, sans-serif",
+      nunito: "Nunito Sans, sans-serif",
     },
     extend: {},
   },
   extend: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: ["dracula"],
+  },
 }

@@ -8,16 +8,20 @@ function Error() {
 
   return (
     <Container>
-      <h1>Oops!</h1>
+      <div className="prose">
+        <h1>Oops!</h1>
 
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>
+          <i>{error.statusText || error.message}</i>
+        </p>
 
-      <p>
-        <Link to="/">Home</Link>
-      </p>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </div>
     </Container>
   )
 }

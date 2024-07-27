@@ -5,10 +5,15 @@ import Container from "../components/container"
 function Settings() {
   return (
     <Container>
-      <p>This is the settings page.</p>
-      <p>
-        <Link to="/">Home</Link>
-      </p>
+      <div className="prose">
+        <p>This is the settings page.</p>
+
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </div>
     </Container>
   )
 }
