@@ -4,20 +4,18 @@ First off, thanks for taking the time to contribute! 💜
 
 ## Local Development
 
-### Frontend
-
 ```bash
 # Install deps
 yarn install
 
-# Format
-yarn format:check
-yarn format
+# Watch for UI code changes, and rebuild
+yarn watch
+```
 
-# Lint
-yarn lint
-yarn lint:fix
+```bash
+# Install air for live reload
+go install github.com/air-verse/air@latest
 
 # Run → http://localhost:5173
-yarn dev
+air
 ```
