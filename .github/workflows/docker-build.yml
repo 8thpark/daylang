@@ -1,0 +1,32 @@
+name: Docker / Build
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          load: true
+          tags: daylang-app:${{ github.sha }}
+
+      - name: Save Docker image
+        run: docker save daylang-app:${{ github.sha }} > daylang-app.tar
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: daylang-app
+          path: daylang-app.tar
