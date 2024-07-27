@@ -3,7 +3,7 @@ name: JS / Lint & Format
 on: [push]
 
 jobs:
-  lint:
+  job:
     name: Run
     runs-on: ubuntu-latest
 

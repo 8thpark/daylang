@@ -3,8 +3,8 @@ name: Docker / Build
 on: [push]
 
 jobs:
-  build:
-    name: Build
+  job:
+    name: Run
     runs-on: ubuntu-latest
 
     steps:
