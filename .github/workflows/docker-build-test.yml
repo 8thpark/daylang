@@ -1,26 +1,26 @@
-name: Docker / Integration Test
+name: Docker / Build & Test
 
-on:
-  workflow_run:
-    workflows: ["Docker / Build"]
-    types:
-      - completed
+on: [push]
 
 jobs:
   job:
     name: Run
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      - name: Download Docker image artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: daylang
-          path: .
+      - name: Check out code
+        uses: actions/checkout@v3
 
-      - name: Load Docker image
-        run: docker load < daylang.tar
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          load: true
+          tags: daylang:${{ github.sha }}
 
       - name: Run Docker container
         run: |
