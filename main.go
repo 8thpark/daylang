@@ -54,7 +54,8 @@ func main() {
 		return ctx.File(filePath) // File exists, serve it.
 	})
 
-	router.Logger.Fatal(router.Start(":5173"))
+	addr := address()
+	router.Logger.Fatal(router.Start(addr))
 }
 
 func defaultMiddleware() []echo.MiddlewareFunc {
@@ -63,4 +64,13 @@ func defaultMiddleware() []echo.MiddlewareFunc {
 		middleware.Logger(),
 		middleware.Recover(),
 	}
+}
+
+func address() string {
+	host := "localhost"
+	if os.Getenv("APP_ENV") == "docker" {
+		host = ""
+	}
+
+	return host + ":5173"
 }

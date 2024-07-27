@@ -8,5 +8,8 @@ export default {
     extend: {},
   },
   extend: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: ["dracula"],
+  },
 }

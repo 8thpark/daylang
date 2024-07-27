@@ -9,6 +9,7 @@ RUN yarn vite:build
 # Final
 FROM golang:1.22
 WORKDIR /app
+ENV APP_ENV=docker
 COPY main.go go.mod go.sum ./
 COPY VERSION ./
 # COPY server ./server
