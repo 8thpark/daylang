@@ -1,15 +1,20 @@
 package main
 
 import (
+	_ "embed"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/pkg/errors"
 )
+
+//go:embed VERSION
+var version string
 
 func main() {
 	router := echo.New()
@@ -20,6 +25,15 @@ func main() {
 	router.GET("/logout", func(ctx echo.Context) error {
 		log.Println("user logged out")
 		return ctx.Redirect(http.StatusSeeOther, "/?logout=true")
+	})
+
+	router.GET("/status", func(ctx echo.Context) error {
+		status := map[string]string{
+			"status":  "ok",
+			"version": strings.TrimSpace(version),
+		}
+
+		return ctx.JSON(http.StatusOK, status)
 	})
 
 	router.GET("/*", func(ctx echo.Context) error {
