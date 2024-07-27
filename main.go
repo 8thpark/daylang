@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -72,5 +73,5 @@ func address() string {
 		host = ""
 	}
 
-	return host + ":5173"
+	return fmt.Sprintf("%s:5173", host)
 }
