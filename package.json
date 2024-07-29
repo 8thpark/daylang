@@ -21,6 +21,7 @@
     "watch": "npm-watch"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
