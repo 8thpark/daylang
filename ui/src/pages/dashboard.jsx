@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { useDocumentTitle } from "@uidotdev/usehooks"
 import Container from "../components/container"
 
 function Dashboard() {
+  useDocumentTitle("DayLang — Home")
   return (
     <Container>
       <div className="prose">
