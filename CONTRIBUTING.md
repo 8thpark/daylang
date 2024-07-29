@@ -16,6 +16,6 @@ yarn watch
 # Install air for live reload
 go install github.com/air-verse/air@latest
 
-# Run → http://localhost:5173
+# Run → http://localhost:5174
 air
 ```
