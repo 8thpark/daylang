@@ -3,22 +3,21 @@
   "private": true,
   "type": "module",
   "watch": {
-    "vite:build": {
+    "build": {
       "patterns": [
         "ui"
       ],
-      "extensions": "css,html,jsx,png"
+      "extensions": "css,html,jsx,png,txt"
     }
   },
   "scripts": {
+    "build": "vite build ./ui --outDir ../dist --emptyOutDir",
     "check-deps": "depcheck",
+    "dev": "vite ./ui",
     "format": "prettier --write './**/*.{js,jsx,css,html,json}'",
     "format:check": "prettier --check './**/*.{js,jsx,css,html,json}'",
     "lint": "eslint './**/*.{js,jsx}'",
     "lint:fix": "eslint './**/*.{js,jsx}' --fix",
-    "dev": "vite ./ui",
-    "vite:build": "vite build ./ui --outDir ../dist --emptyOutDir",
-    "vite:preview": "vite preview ./ui",
     "watch": "npm-watch"
   },
   "dependencies": {

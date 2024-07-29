@@ -24,18 +24,18 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -d -p 5173:5173 --name daylang daylang:${{ github.sha }}
+          docker run -d -p 5174:5174 --name daylang daylang:${{ github.sha }}
           sleep 5
 
       - name: Check status endpoint
         run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/status)
+          response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5174/status)
           if [ $response -ne 200 ]; then
             echo "status endpoint returned $response, expected 200"
             exit 1
           fi
 
-          content=$(curl -s http://localhost:5173/status)
+          content=$(curl -s http://localhost:5174/status)
           if ! echo $content | jq -e '.status == "ok"' > /dev/null; then
             echo "status is not 'ok'"
             exit 1

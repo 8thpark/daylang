@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
-RUN yarn vite:build
+RUN yarn build
 
 # Final
 FROM golang:1.22
@@ -15,5 +15,5 @@ COPY VERSION ./
 # COPY server ./server
 COPY --from=build /app/dist ./dist
 RUN go build -o daylang-server .
-EXPOSE 5173
+EXPOSE 5174
 CMD ["./daylang-server"]

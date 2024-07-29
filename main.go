@@ -59,19 +59,27 @@ func main() {
 	router.Logger.Fatal(router.Start(addr))
 }
 
-func defaultMiddleware() []echo.MiddlewareFunc {
-	return []echo.MiddlewareFunc{
-		middleware.Gzip(),
-		middleware.Logger(),
-		middleware.Recover(),
-	}
-}
-
 func address() string {
 	host := "localhost"
 	if os.Getenv("APP_ENV") == "docker" {
 		host = ""
 	}
 
-	return fmt.Sprintf("%s:5173", host)
+	return fmt.Sprintf("%s:5174", host)
+}
+
+func defaultMiddleware() []echo.MiddlewareFunc {
+	return []echo.MiddlewareFunc{
+		middleware.Gzip(),
+		middleware.Logger(),
+		middleware.Recover(),
+		noIndexMiddleware,
+	}
+}
+
+func noIndexMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		c.Response().Header().Set("X-Robots-Tag", "noindex")
+		return next(c)
+	}
 }

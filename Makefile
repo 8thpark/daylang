@@ -2,7 +2,7 @@ build:
 	go build -o daylang-server .
 
 docker:
-	docker run -p 5173:5173 daylang:local
+	docker run -p 5174:5174 daylang:local
 
 image:
 	docker build -t daylang:local .
