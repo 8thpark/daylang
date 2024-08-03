@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/sunset.png" width="125px">
+  <img src="./assets/logo.png" width="125px">
 </p>
 
 <h1 align="center">DayLang</h1>
