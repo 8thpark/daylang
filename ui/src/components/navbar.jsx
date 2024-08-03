@@ -1,7 +1,20 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import SelfContext from "../self_context"
 
 function Navbar() {
+  const self = useContext(SelfContext)
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    if (self && self.mode === "bridge") {
+      window.location.href = `${self.billingRedirect}/logout`
+      return
+    }
+
+    navigate("/login")
+  }
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
@@ -12,11 +25,16 @@ function Navbar() {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
+          {self && self.mode === "bridge" && (
+            <li>
+              <a href={`${self.billingRedirect}/user/settings`}>Account</a>
+            </li>
+          )}
+
           <li>
-            <a href="https://daylang.com/account">Account</a>
-          </li>
-          <li>
-            <a href="/logout">Logout</a>
+            <button type="button" onClick={handleLogout}>
+              Logout
+            </button>
           </li>
         </ul>
       </div>

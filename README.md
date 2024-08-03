@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/sunset.png" width="125px">
+  <img src="./assets/logo.png" width="125px">
 </p>
 
 <h1 align="center">DayLang</h1>
@@ -11,3 +11,8 @@
 ## Contributing
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+## Project
+
+- See [milestones](https://github.com/8thpark/daylang/milestones) for the roadmap
+- See [changelog](https://wip.co/projects/daylang) for more unstructured updates

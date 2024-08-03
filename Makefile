@@ -8,4 +8,4 @@ image:
 	docker build -t daylang:local .
 
 run: build
-	./daylang-server
+	./daylang-server --environment=local --mode=bridge --billing-redirect=http://localhost:5173
