@@ -8,8 +8,9 @@
   Daily vocabulary builder for language learners.
 </p>
 
-![Static Badge](https://img.shields.io/badge/version-0.0.2-%230F172A?style=flat-square)
-![GitHub branch status](https://img.shields.io/github/checks-status/8thpark/daylang/main?style=flat-square)
+![Version](https://img.shields.io/badge/version-0.0.2-%230F172A?style=flat-square)
+![GitHub Action](https://img.shields.io/github/checks-status/8thpark/daylang/main?style=flat-square)
+![GitHub License](https://img.shields.io/github/license/8thpark/daylang?style=flat-square)
 
 - **Speak with confidence**
 - Learn new words daily with spaced repetition
