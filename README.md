@@ -15,9 +15,9 @@
 - **Speak with confidence**
 - Learn new words daily with spaced repetition
 - Streaks, XP, and leaderboards like [Duolingo](https://www.duolingo.com)
-- Pre-built courses or create your own
 - Full configuration like [Anki](https://apps.ankiweb.net)
-- Paid app, or selfhost your own
+- Pre-built courses or create your own
+- Paid app, or selfhost
 
 ## Contributing
 
