@@ -8,10 +8,11 @@
   Daily vocabulary builder for language learners.
 </p>
 
-## Roadmap
-
-See [milestones](https://github.com/8thpark/daylang/milestones).
-
 ## Contributing
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+## Project
+
+- See [milestones](https://github.com/8thpark/daylang/milestones) for the roadmap
+- See [changelog](https://wip.co/projects/daylang) for more unstructured updates
