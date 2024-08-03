@@ -9,6 +9,7 @@
 </p>
 
 ![Static Badge](https://img.shields.io/badge/version-0.0.2-%230F172A?style=flat-square)
+![GitHub branch status](https://img.shields.io/github/checks-status/8thpark/daylang/main?style=flat-square)
 
 - **Speak with confidence**
 - Learn new words daily with spaced repetition
