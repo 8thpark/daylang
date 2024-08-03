@@ -8,6 +8,11 @@
   Daily vocabulary builder for language learners.
 </p>
 
+![Static Badge](https://img.shields.io/badge/version-0.0.2-%230F172A?style=flat-square)
+
+☑️ Foo<br />
+☑️ Bar
+
 ## Contributing
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
