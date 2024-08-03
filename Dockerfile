@@ -9,10 +9,10 @@ RUN yarn build
 # Final
 FROM golang:1.22
 WORKDIR /app
-ENV APP_ENV=docker
+ENV DAYLANG_ENVIRONMENT=docker
 COPY main.go go.mod go.sum ./
 COPY VERSION ./
-# COPY server ./server
+COPY server ./server
 COPY --from=build /app/dist ./dist
 RUN go build -o daylang-server .
 EXPOSE 5174
