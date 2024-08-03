@@ -5,15 +5,19 @@
 <h1 align="center">DayLang</h1>
 
 <p align="center">
+  <img alt="Version badge" src="https://img.shields.io/badge/version-0.0.2-blue?style=flat-square">
+  <img alt="GitHub action badge" src="https://img.shields.io/github/check-runs/8thpark/daylang/main?style=flat-square">
+  <img alt="GitHub license badge" src="https://img.shields.io/github/license/8thpark/daylang?style=flat-square">
+</p>
+
+<p align="center">
   Daily vocabulary builder for language learners.
 </p>
 
-![Version](https://img.shields.io/badge/version-0.0.2-%230F172A?style=flat-square)
-![GitHub Action](https://img.shields.io/github/checks-status/8thpark/daylang/main?style=flat-square)
-![GitHub License](https://img.shields.io/github/license/8thpark/daylang?style=flat-square)
+## Features
 
 - **Speak with confidence**
-- Learn new words daily with spaced repetition
+- Daily learning with spaced repetition
 - Streaks, XP, and leaderboards like [Duolingo](https://www.duolingo.com)
 - Full configuration like [Anki](https://apps.ankiweb.net)
 - Pre-built courses or create your own
